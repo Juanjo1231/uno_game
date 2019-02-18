@@ -1,0 +1,98 @@
+:root {
+    --blackCard: #1f1b18;
+    --blueCard: #0493de;
+    --cardSize: 6em;
+    --greenCard: #018d41;
+    --redCard: #dc251c;
+    --yellowCard: #fcf604;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 0.8em;
+    display: inline-block;
+    padding: 0.5em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12),
+                0 1px 2px rgba(0,0,0,0.24);
+}
+.card .background {
+    border-radius: 0.5em;
+    height: calc(var(--cardSize) * 1.5357);
+    position: relative;
+    width: var(--cardSize);
+}
+.card.turned .background {
+    overflow: hidden;
+}
+.card .icon-cont {
+    background-color: white;
+    width: var(--cardSize);
+    height: calc(var(--cardSize) * 1.4);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+    transform: translate(-50%, -50%) rotate(10deg);
+    border-radius: 90% 40%;
+}
+.card.red .background{
+    background-color: var(--redCard);
+}
+.card.blue .background{
+    background-color: var(--blueCard);
+}
+.card.yellow .background{
+    background-color: var(--yellowCard);
+}
+.card.green .background{
+    background-color: var(--greenCard);
+}
+.card.black .background{
+    background-color: var(--blackCard);
+}
+
+.hand-container {
+    position: relative;
+    margin: 2em;
+}
+.hand-container .card {
+    position: absolute;
+}
+.hand-container .card:nth-child(1) {
+    left: 2.2em;
+}
+.hand-container .card:nth-child(2) {
+    left: 4.4em;
+}
+.hand-container .card:nth-child(3) {
+    left: 6.60em;
+}
+.hand-container .card:nth-child(4) {
+    left: 8.8em;
+}
+.hand-container .card:nth-child(5) {
+    left: 11em;
+}
+.hand-container .card:nth-child(6) {
+        left: 13.2em;
+}
+.hand-container .card:nth-child(7) {
+left: 15.4em;
+}
+.hand-container.main .card {
+    cursor: pointer;
+    transform-origin: left bottom;
+    transition: 100ms;
+}
+.hand-container.main .card:hover {
+    transform: translateY(-0.2em) rotate(-5deg);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16),
+                0 3px 6px rgba(0,0,0,0.23);
+}
+.hand-container.main .card:last-child:hover {
+    transform: translateY(-0.2em) rotate(0);
+}
+.hand-container.main .card:hover ~ .card{
+    transform: translateX(1.5em);
+}
